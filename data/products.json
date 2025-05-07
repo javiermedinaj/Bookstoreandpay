@@ -22,11 +22,21 @@
     "BK0008": {
         "codigo": "BK0008",
         "titulo": "Libro1",
-        "autor": "Borja",
-        "descripcion_completa": "\r\n",
+        "autor": "O'Reilly",
+        "descripcion_completa": "Python guidance ",
         "stock": 10,
-        "precio": 12.0,
-        "imagen": "",
+        "precio": 1200.0,
+        "imagen": "python_poortada.webp",
+        "categoria": "Science"
+    },
+    "BK0009": {
+        "codigo": "BK0009",
+        "titulo": "El Aleph",
+        "autor": "Borges",
+        "descripcion_completa": "Cuento corto",
+        "stock": 10,
+        "precio": 1000.0,
+        "imagen": "aleph.webp",
         "categoria": "Fiction"
     }
 }

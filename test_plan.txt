@@ -1,0 +1,112 @@
+Sistema de Tienda de Libros (BookHaven)
+
+1. Introducción
+1.1 Alcance
+El alcance del plan de pruebas es verificar todas las funciones principales del sistema de tienda de libros. Esto incluye la gestión del catálogo de libros (CRUD), visualización de libros, filtrado por categorías, y la gestión de imágenes de portada.
+
+1.2 Referencias
+Se deben consultar documentos como la especificación de requisitos del proyecto para asegurarse de que las pruebas se realicen conforme a los requisitos funcionales y no funcionales. También se pueden considerar normas y guías de pruebas.
+
+1.3 Glosario
+Incluye términos clave relacionados con el sistema de tienda de libros, como:
+    • Libro: Un artículo en el catálogo con título, autor, descripción, stock, precio, categoría e imagen de portada.
+    • Categoría: Clasificación del libro (Fiction, Non-Fiction, Mystery, Science, Biography, General).
+    • CRUD: Operaciones básicas de Create (Crear), Read (Leer), Update (Actualizar), Delete (Eliminar).
+
+2. Contexto de Pruebas
+2.1 Proyecto de Pruebas
+Describe el alcance de las pruebas que incluyen:
+    • Pruebas unitarias: Para validar funciones específicas del programa (books.py y app.py).
+    • Pruebas de integración: Para verificar la interacción entre diferentes funciones.
+    • Pruebas de aceptación: Para asegurar que el programa cumple con las expectativas de los usuarios finales.
+
+2.2 Elementos de Pruebas
+Los elementos de prueba incluyen:
+    • Código fuente: El código del programa a ser probado (Flask, Python).
+    • Base de datos de libros: Archivo JSON que almacena la información de los libros.
+    • Casos de prueba: Son los escenarios específicos para probar, incluyendo los datos de entrada y los resultados esperados.
+
+2.3 Alcance de Pruebas
+Detalla qué se probará, por ejemplo:
+    • Agregar libro: Verificar que se agrega un libro correctamente al catálogo.
+    • Eliminar libro: Asegurarse de que se puede eliminar un libro del catálogo.
+    • Listar libros: Comprobar que se listan todos los libros en el catálogo.
+    • Filtrar por categoría: Verificar el filtrado correcto de libros por categoría.
+    • Gestión de imágenes: Probar la carga y visualización de imágenes de portada.
+
+3. Registro de Riesgos
+Los riesgos se documentan y se establecen estrategias de mitigación, como:
+    • Riesgo de defectos críticos: Realizar pruebas de regresión para detectar errores.
+    • Cambios en los requisitos: Mantener comunicación abierta con los desarrolladores y clientes.
+    • Problemas con imágenes: Verificar la validación y manejo de errores en la carga de imágenes.
+
+4. Estrategia de Prueba
+4.1 Subprocesos de Pruebas
+Describe los tipos de pruebas a realizar, como:
+    • Pruebas de funcionalidad: Verificar que las funciones del programa trabajan correctamente.
+    • Pruebas de usabilidad: Evaluar la facilidad de uso del programa.
+    • Pruebas de rendimiento: Asegurarse de que el programa responde rápidamente.
+    • Pruebas de seguridad: Verificar la protección contra accesos no autorizados.
+
+4.2 Entregables de Pruebas
+Los entregables de prueba incluyen:
+    • Casos de prueba: Documentos detallados con pasos, datos de entrada y resultados esperados.
+    • Informes de pruebas: Resumen de los resultados de las pruebas, incluyendo los casos de prueba ejecutados, defectos encontrados y su estado.
+
+4.3 Técnicas de Diseño de Pruebas
+Se aplican diversas técnicas para diseñar casos de prueba efectivos:
+    • Pruebas basadas en casos de uso: Verificar cómo responde el programa a los escenarios típicos de uso.
+    • Análisis de valores límites: Probar los límites de los datos de entrada para encontrar defectos en extremos.
+
+4.4 Criterio de Finalización y Pruebas
+Establece cuándo se consideran completas las pruebas, por ejemplo:
+    • Cuando todas las funciones del programa se han probado y cumplen con los requisitos establecidos.
+    • Cuando se han verificado todos los objetivos definidos en los casos de prueba.
+    • Cuando se alcanza una cobertura de código mínima del 85%.
+
+4.5 Métricas
+Las métricas ayudan a evaluar la calidad del programa y el progreso de las pruebas:
+    • Número de casos de prueba ejecutados: Indica la cobertura de las pruebas.
+    • Número de defectos encontrados: Ayuda a evaluar la calidad del programa.
+    • Número de pruebas re-ejecutadas: Mide la eficiencia del re-testing.
+
+4.6 Ambiente de Pruebas
+    • Software: Python 3.13.2
+    • Framework: Flask 3.1.0
+    • Sistemas operativos: Windows - Fedora 42
+    • Herramientas: 
+        - Pytest 8.3.5 para pruebas unitarias
+        - Pytest-cov 6.1.1 para cobertura de código
+        - Pytest-html 4.1.1 para reportes HTML
+        - Virtualenv 20.16.4 para crear un entorno virtual en windows .\venv\Scripts\Activate.ps1 mientras tanto que en linux se usa source venv/bin/activate
+
+4.7 Criterios de Suspensión
+Describe las condiciones bajo las cuales se suspenderían las pruebas, como:
+    • Si se detectan defectos críticos que impidan continuar con las pruebas.
+    • Si hay problemas con el entorno de pruebas que no permitan ejecutar las pruebas correctamente.
+
+5. Actividades y Estímulos de Pruebas
+    • Definición de la estructura de pruebas: Identificar conjuntos de casos de uso críticos para organizar los casos de prueba.
+    • Especificación detallada de casos de prueba: Elaborar casos de prueba con datos de entrada y criterios de verificación.
+    • Establecimiento del entorno de pruebas: Configurar un entorno de pruebas similar al entorno de producción.
+    • Ejecución de pruebas: Realizar los casos de prueba definidos y registrar los resultados.
+    • Informes de pruebas semanales: Resumir el progreso y los resultados de las pruebas.
+    • Informe de finalización de pruebas: Al concluir las pruebas, elaborar un informe final con los resultados obtenidos.
+
+6. Cronograma
+Establece fechas de inicio y finalización para cada fase de las pruebas:
+    • Análisis:
+        ◦ Fecha de inicio: 01/04/2025
+        ◦ Fecha de finalización: 07/04/2025
+    • Diseño:
+        ◦ Fecha de inicio: 10/04/2025
+        ◦ Fecha de finalización: 17/04/2025
+    • Entorno de Pruebas:
+        ◦ Fecha de inicio: 25/04/2025
+        ◦ Fecha de finalización: 01/05/2025
+    • Ejecución (3 ciclos):
+        ◦ Fecha de inicio: 05/05/2025
+        ◦ Fecha de finalización: 10/05/2025
+    • Finalización:
+        ◦ Fecha de inicio: 13/05/2025
+        ◦ Fecha de finalización: 18/05/2025 
