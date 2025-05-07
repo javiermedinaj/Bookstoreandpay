@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookHaven - {% block title %}{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-stone-50 min-h-screen flex flex-col">
+    <nav class="bg-red-800 text-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="/" class="text-2xl font-bold flex items-center space-x-2">
+                <i class="fas fa-book-open"></i>
+                <span>Libros912</span>
+            </a>
+            <div class="flex items-center space-x-4">
+                <a href="/" class="hover:text-emerald-200 transition">Home</a>
+                <div class="relative group">
+                    <button class="hover:text-emerald-200 transition flex items-center">
+                        Categories <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div class="absolute hidden group-hover:block bg-white text-gray-800 shadow-lg rounded-md w-48 py-2">
+                        <a href="/categoria/Fiction" class="block px-4 py-2 hover:bg-emerald-100">Fiction</a>
+                        <a href="/categoria/Non-Fiction" class="block px-4 py-2 hover:bg-emerald-100">Non-Fiction</a>
+                        <a href="/categoria/Mystery" class="block px-4 py-2 hover:bg-emerald-100">Mystery</a>
+                        <a href="/categoria/Science" class="block px-4 py-2 hover:bg-emerald-100">Science</a>
+                        <a href="/categoria/Biography" class="block px-4 py-2 hover:bg-emerald-100">Biography</a>
+                        <a href="/categoria/General" class="block px-4 py-2 hover:bg-emerald-100">General</a>
+                    </div>
+                </div>
+                <a href="/admin" class="hover:text-emerald-200 transition">Admin</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-8 flex-grow">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="bg-black text-white py-6">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-4 md:mb-0">
+                    <h3 class="text-xl font-bold mb-2">Libros912</h3>
+                    <p class="text-gray-300">Libros para perder la cordura a a </p>
+                </div>
+                <div class="grid grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-lg font-semibold mb-2">Quick Links</h4>
+                        <ul class="space-y-1">
+                            <li><a href="/" class="text-gray-300 hover:text-white">Home</a></li>
+                            <li><a href="/admin" class="text-gray-300 hover:text-white">Admin</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-2">Contact</h4>
+                        <ul class="space-y-1">
+                            <li class="text-gray-300"><i class="fas fa-envelope mr-2"></i> info@moristeenmadrid.com</li>
+                            <li class="text-gray-300"><i class="fas fa-phone mr-2"></i> (555) 912-2018</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,32 @@
+{
+    "BK0001": {
+        "codigo": "BK0001",
+        "titulo": "Cuthulu",
+        "autor": "Lovecraft",
+        "descripcion_completa": "Un libro de un pulpo queseyo",
+        "stock": 5,
+        "precio": 1500.0,
+        "imagen": "cthulhu.webp",
+        "categoria": "Fiction"
+    },
+    "BK0002": {
+        "codigo": "BK0002",
+        "titulo": "Ser un mal 9",
+        "autor": "Borja",
+        "descripcion_completa": "Las claves para ser un tronco",
+        "stock": 9,
+        "precio": 912.0,
+        "imagen": "borja.jpeg",
+        "categoria": "Biography"
+    },
+    "BK0008": {
+        "codigo": "BK0008",
+        "titulo": "Libro1",
+        "autor": "Borja",
+        "descripcion_completa": "\r\n",
+        "stock": 10,
+        "precio": 12.0,
+        "imagen": "",
+        "categoria": "Fiction"
+    }
+}

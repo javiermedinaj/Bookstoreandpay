@@ -1,0 +1,91 @@
+{% extends 'layout.html' %}
+
+{% block title %}Edit Book{% endblock %}
+
+{% block content %}
+<div class="bg-white shadow rounded-lg max-w-3xl mx-auto">
+    <div class="py-4 px-6 border-b border-gray-200">
+        <h2 class="text-2xl font-bold text-gray-800">Edit Book</h2>
+    </div>
+    
+    <div class="p-6">
+        <form action="{{ url_for('update_product', codigo=producto.codigo) }}" method="POST" enctype="multipart/form-data" class="space-y-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="space-y-2">
+                    <label for="codigo" class="block text-sm font-medium text-gray-700">Book ID</label>
+                    <input type="text" name="codigo" id="codigo" value="{{ producto.codigo }}" readonly
+                           class="w-full px-3 py-2 border border-gray-300 rounded-md bg-gray-100">
+                </div>
+                
+                <div class="space-y-2">
+                    <label for="titulo" class="block text-sm font-medium text-gray-700">Title</label>
+                    <input type="text" name="titulo" id="titulo" value="{{ producto.titulo }}" required 
+                           class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                </div>
+                
+                <div class="space-y-2">
+                    <label for="autor" class="block text-sm font-medium text-gray-700">Author</label>
+                    <input type="text" name="autor" id="autor" value="{{ producto.autor }}" required 
+                           class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                </div>
+                
+                <div class="space-y-2 md:col-span-2">
+                    <label for="descripcion_completa" class="block text-sm font-medium text-gray-700">Description</label>
+                    <textarea name="descripcion_completa" id="descripcion_completa" rows="3" required
+                           class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500">{{ producto.descripcion_completa }}</textarea>
+                </div>
+                
+                <div class="space-y-2">
+                    <label for="categoria" class="block text-sm font-medium text-gray-700">Category</label>
+                    <select name="categoria" id="categoria" 
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                        <option value="Fiction" {% if producto.categoria == 'Fiction' %}selected{% endif %}>Fiction</option>
+                        <option value="Non-Fiction" {% if producto.categoria == 'Non-Fiction' %}selected{% endif %}>Non-Fiction</option>
+                        <option value="Mystery" {% if producto.categoria == 'Mystery' %}selected{% endif %}>Mystery</option>
+                        <option value="Science" {% if producto.categoria == 'Science' %}selected{% endif %}>Science</option>
+                        <option value="Biography" {% if producto.categoria == 'Biography' %}selected{% endif %}>Biography</option>
+                        <option value="General" {% if producto.categoria == 'General' %}selected{% endif %}>General</option>
+                    </select>
+                </div>
+                
+                <div class="space-y-2">
+                    <label for="stock" class="block text-sm font-medium text-gray-700">Stock</label>
+                    <input type="number" name="stock" id="stock" value="{{ producto.stock }}" min="0" required 
+                           class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                </div>
+                
+                <div class="space-y-2">
+                    <label for="precio" class="block text-sm font-medium text-gray-700">Price ($)</label>
+                    <input type="number" name="precio" id="precio" value="{{ producto.precio }}" step="0.01" min="0" required 
+                           class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                </div>
+                
+                <div class="space-y-2 md:col-span-2">
+                    <label for="image" class="block text-sm font-medium text-gray-700">Book Cover</label>
+                    <div class="flex items-center space-x-4">
+                        {% if producto.imagen %}
+                        <img src="{{ url_for('static', filename='imgs/' + producto.imagen) }}" alt="{{ producto.titulo }}" class="w-16 h-16 object-cover rounded">
+                        {% else %}
+                        <div class="w-16 h-16 bg-gray-200 flex items-center justify-center rounded">
+                            <i class="fas fa-book text-gray-400"></i>
+                        </div>
+                        {% endif %}
+                        <input type="file" name="image" id="image" accept="image/*" 
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                    </div>
+                    <p class="text-xs text-gray-500 mt-1">Leave empty to keep the current image</p>
+                </div>
+            </div>
+            
+            <div class="flex space-x-3 pt-4">
+                <button type="submit" class="px-4 py-2 bg-emerald-600 text-white font-medium rounded-md hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                    <i class="fas fa-save mr-2"></i> Update Book
+                </button>
+                <a href="{{ url_for('admin') }}" class="px-4 py-2 bg-gray-500 text-white font-medium rounded-md hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500">
+                    <i class="fas fa-times mr-2"></i> Cancel
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

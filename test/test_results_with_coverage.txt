@@ -1,0 +1,28 @@
+============================= test session starts ==============================
+platform linux -- Python 3.13.2, pytest-8.3.5, pluggy-1.5.0 -- /home/javimedina/Desktop/books-store/venv/bin/python
+cachedir: .pytest_cache
+metadata: {'Python': '3.13.2', 'Platform': 'Linux-6.13.10-200.fc41.x86_64-x86_64-with-glibc2.40', 'Packages': {'pytest': '8.3.5', 'pluggy': '1.5.0'}, 'Plugins': {'cov': '6.1.1', 'metadata': '3.1.1', 'html': '4.1.1'}}
+rootdir: /home/javimedina/Desktop/books-store/test
+plugins: cov-6.1.1, metadata-3.1.1, html-4.1.1
+collecting ... collected 9 items
+
+test_routes.py::test_index_and_home PASSED                               [ 11%]
+test_routes.py::test_filter_by_category PASSED                           [ 22%]
+test_routes.py::test_admin PASSED                                        [ 33%]
+test_routes.py::test_book_detail_invalid PASSED                          [ 44%]
+test_product_crud.py::test_add_product PASSED                            [ 55%]
+test_product_crud.py::test_edit_product_page PASSED                      [ 66%]
+test_product_crud.py::test_update_product PASSED                         [ 77%]
+test_product_crud.py::test_book_detail PASSED                            [ 88%]
+test_product_crud.py::test_delete_product PASSED                         [100%]
+
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.13.2-final-0 ________________
+
+Name                                            Stmts   Miss  Cover
+-------------------------------------------------------------------
+/home/javimedina/Desktop/books-store/app.py        75      5    93%
+/home/javimedina/Desktop/books-store/books.py      62     12    81%
+-------------------------------------------------------------------
+TOTAL                                             137     17    88%
+============================== 9 passed in 0.34s ===============================
