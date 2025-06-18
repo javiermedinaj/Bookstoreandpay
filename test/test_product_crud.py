@@ -62,7 +62,7 @@ def added_product(client):
             print(f"FIXTURE: Producto agregado con código {code}")
             return code
     
-    print("FIXTURE: ¡ADVERTENCIA! No se pudo agregar el producto de prueba")
+    print("FIXTURE: No se pudo agregar el producto de prueba")
     return None
 
 def test_add_product(client):
@@ -90,12 +90,12 @@ def test_add_product(client):
     print(f"Respuesta del servidor: código {response.status_code} (302=Redirected)")
     assert response.status_code == 302, "La adición de producto debería redirigir"
 
-    # Verify that one product exists
+    # Verificar que el producto fue agregado o existe 
     products = load_products()
     print(f"Productos en el sistema después de agregar: {len(products)}")
     assert len(products) > 0, "Debería haber al menos un producto"
     
-    # Find our test product
+    # Verificar que el producto agregado está en la lista
     codigo = None
     for code, product in products.items():
         if product['titulo'] == 'Test Book':

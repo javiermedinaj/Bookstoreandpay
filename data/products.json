@@ -38,5 +38,135 @@
         "precio": 1000.0,
         "imagen": "aleph.webp",
         "categoria": "Fiction"
+    },
+    "BK0015": {
+        "codigo": "BK0015",
+        "titulo": "ffff",
+        "autor": "trrrr",
+        "descripcion_completa": "tttt",
+        "stock": 0,
+        "precio": 8.0,
+        "imagen": "",
+        "categoria": "Fiction"
+    },
+    "BK0017": {
+        "codigo": "BK0017",
+        "titulo": "Libro Inv\u00e1lido",
+        "autor": "Autor Test",
+        "descripcion_completa": "Descripci\u00f3n de prueba",
+        "stock": 10,
+        "precio": "no-es-un-numero",
+        "imagen": "test.jpg",
+        "categoria": "Fiction"
+    },
+    "BK0018": {
+        "codigo": "BK0018",
+        "titulo": "Libro Inv\u00e1lido",
+        "autor": "Autor Test",
+        "descripcion_completa": "Descripci\u00f3n de prueba",
+        "stock": "no-es-un-numero",
+        "precio": 29.99,
+        "imagen": "test.jpg",
+        "categoria": "Fiction"
+    },
+    "BK0020": {
+        "codigo": "BK0020",
+        "titulo": "Libro Inv\u00e1lido",
+        "autor": "Autor Test",
+        "descripcion_completa": "Descripci\u00f3n de prueba",
+        "stock": 10,
+        "precio": "no-es-un-numero",
+        "imagen": "test.jpg",
+        "categoria": "Fiction"
+    },
+    "BK0021": {
+        "codigo": "BK0021",
+        "titulo": "Libro Inv\u00e1lido",
+        "autor": "Autor Test",
+        "descripcion_completa": "Descripci\u00f3n de prueba",
+        "stock": "no-es-un-numero",
+        "precio": 29.99,
+        "imagen": "test.jpg",
+        "categoria": "Fiction"
+    },
+    "BK0028": {
+        "codigo": "BK0028",
+        "titulo": "Libro Inv\u00e1lido",
+        "autor": "Autor Test",
+        "descripcion_completa": "Descripci\u00f3n de prueba",
+        "stock": 10,
+        "precio": "no-es-un-numero",
+        "imagen": "test.jpg",
+        "categoria": "Fiction"
+    },
+    "BK0029": {
+        "codigo": "BK0029",
+        "titulo": "Libro Inv\u00e1lido",
+        "autor": "Autor Test",
+        "descripcion_completa": "Descripci\u00f3n de prueba",
+        "stock": "no-es-un-numero",
+        "precio": 29.99,
+        "imagen": "test.jpg",
+        "categoria": "Fiction"
+    },
+    "BK0034": {
+        "codigo": "BK0034",
+        "titulo": "Libro Inv\u00e1lido",
+        "autor": "Autor Test",
+        "descripcion_completa": "Descripci\u00f3n de prueba",
+        "stock": 10,
+        "precio": "no-es-un-numero",
+        "imagen": "test.jpg",
+        "categoria": "Fiction"
+    },
+    "BK0035": {
+        "codigo": "BK0035",
+        "titulo": "Libro Inv\u00e1lido",
+        "autor": "Autor Test",
+        "descripcion_completa": "Descripci\u00f3n de prueba",
+        "stock": "no-es-un-numero",
+        "precio": 29.99,
+        "imagen": "test.jpg",
+        "categoria": "Fiction"
+    },
+    "BK0040": {
+        "codigo": "BK0040",
+        "titulo": "Libro Inv\u00e1lido",
+        "autor": "Autor Test",
+        "descripcion_completa": "Descripci\u00f3n de prueba",
+        "stock": 10,
+        "precio": "no-es-un-numero",
+        "imagen": "test.jpg",
+        "categoria": "Fiction"
+    },
+    "BK0041": {
+        "codigo": "BK0041",
+        "titulo": "Libro Inv\u00e1lido",
+        "autor": "Autor Test",
+        "descripcion_completa": "Descripci\u00f3n de prueba",
+        "stock": "no-es-un-numero",
+        "precio": 29.99,
+        "imagen": "test.jpg",
+        "categoria": "Fiction"
+    },
+    "BK0046": {
+        "codigo": "BK0046",
+        "titulo": "Libro Inv\u00e1lido",
+        "autor": "Autor Test",
+        "descripcion_completa": "Descripci\u00f3n de prueba",
+        "stock": 10,
+        "precio": "no-es-un-numero",
+        "imagen": "test.jpg",
+        "categoria": "Fiction"
+    },
+    "BK0047": {
+        "codigo": "BK0047",
+        "titulo": "Libro Inv\u00e1lido",
+        "autor": "Autor Test",
+        "descripcion_completa": "Descripci\u00f3n de prueba",
+        "stock": "no-es-un-numero",
+        "precio": 29.99,
+        "imagen": "test.jpg",
+        "categoria": "Fiction"
     }
 }

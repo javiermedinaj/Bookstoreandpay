@@ -79,7 +79,9 @@ Las métricas ayudan a evaluar la calidad del programa y el progreso de las prue
         - Pytest-cov 6.1.1 para cobertura de código
         - Pytest-html 4.1.1 para reportes HTML
         - Virtualenv 20.16.4 para crear un entorno virtual en windows .\venv\Scripts\Activate.ps1 mientras tanto que en linux se usa source venv/bin/activate
+        - Docker para crear un contenedor de pruebas y que sea compatible con el entorno de producción.
 
+        
 4.7 Criterios de Suspensión
 Describe las condiciones bajo las cuales se suspenderían las pruebas, como:
     • Si se detectan defectos críticos que impidan continuar con las pruebas.
@@ -110,3 +112,32 @@ Establece fechas de inicio y finalización para cada fase de las pruebas:
     • Finalización:
         ◦ Fecha de inicio: 13/05/2025
         ◦ Fecha de finalización: 18/05/2025 
+
+
+
+#error 18 de junio 
+Error TyperError: '>' not supported between instances of 'str' and 'int'
+Este error está ocurriendo en tu aplicación Flask cuando intenta renderizar la plantilla home.html. El problema específico está en la línea 37 de ese archivo:
+
+Causa del error
+El error '>' not supported between instances of 'str' and 'int' indica que estás intentando comparar un string con un número entero, lo cual no es posible en Python.
+
+En este caso específico:
+
+producto.stock es un string (por ejemplo, "5")
+10 es un entero
+Python no puede comparar directamente estos tipos diferentes usando el operador >
+Soluciones posibles
+Opción 1: Convertir el stock a entero en la plantilla
+El filtro |int de Jinja2 convertirá el string a un entero antes de hacer la comparación.
+
+Opción 2: Asegurar que stock sea un entero en el backend
+Modifica tu código en books.py o app.py para convertir el valor de stock a entero antes de pasar los datos a la plantilla:
+
+Opción 3: Cambiar la comparación en la plantilla
+Esta opción compara ambos valores como strings, pero ten en cuenta que la comparación de strings funciona diferente (por ejemplo, "5" > "10" sería verdadero porque "5" va después de "1" al comparar alfabéticamente).
+
+Recomendación
+La opción 1 es la más sencilla si solo necesitas hacer la comparación en la plantilla. La opción 2 es mejor si necesitas usar el valor de stock como número en múltiples lugares.
+
+Para evitar este tipo de errores en el futuro, considera agregar pruebas que verifiquen el tipo de datos de cada campo en tus productos.

@@ -26,7 +26,7 @@ def test_filter_by_category(client):
     """Prueba el filtrado por categoría"""
     response = client.get('/categoria/General')
     assert response.status_code == 200
-
+#probar con categoria que no existe agregar automatizacion despues 
 def test_admin(client):
     """Prueba el acceso a la página de administración"""
     response = client.get('/admin')
