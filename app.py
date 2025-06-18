@@ -36,8 +36,8 @@ def add_product():
     titulo = request.form['titulo']
     autor = request.form['autor']
     descripcion_completa = request.form['descripcion_completa']
-    stock = int(request.form['stock'])
-    precio = float(request.form['precio'])
+    stock = request.form['stock']
+    precio = request.form['precio']
     categoria = request.form['categoria']
     image = request.files['image']
 

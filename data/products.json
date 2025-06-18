@@ -6,18 +6,8 @@
         "descripcion_completa": "Un libro de un pulpo queseyo",
         "stock": 5,
         "precio": 1500.0,
-        "imagen": "cthulhu.webp",
+        "imagen": "cuthulu.jpg",
         "categoria": "Fiction"
-    },
-    "BK0002": {
-        "codigo": "BK0002",
-        "titulo": "Ser un mal 9",
-        "autor": "Borja",
-        "descripcion_completa": "Las claves para ser un tronco",
-        "stock": 9,
-        "precio": 912.0,
-        "imagen": "borja.jpeg",
-        "categoria": "Biography"
     },
     "BK0008": {
         "codigo": "BK0008",
@@ -26,146 +16,56 @@
         "descripcion_completa": "Python guidance ",
         "stock": 10,
         "precio": 1200.0,
-        "imagen": "python_poortada.webp",
+        "imagen": "python.png",
         "categoria": "Science"
-    },
-    "BK0009": {
-        "codigo": "BK0009",
-        "titulo": "El Aleph",
-        "autor": "Borges",
-        "descripcion_completa": "Cuento corto",
-        "stock": 10,
-        "precio": 1000.0,
-        "imagen": "aleph.webp",
-        "categoria": "Fiction"
     },
     "BK0015": {
         "codigo": "BK0015",
-        "titulo": "ffff",
-        "autor": "trrrr",
-        "descripcion_completa": "tttt",
+        "titulo": "ObjectiveC",
+        "autor": "O'Reilly",
+        "descripcion_completa": "ObjectiveC guidance",
         "stock": 0,
         "precio": 8.0,
-        "imagen": "",
+        "imagen": "objectivec.jpg",
         "categoria": "Fiction"
     },
     "BK0017": {
         "codigo": "BK0017",
-        "titulo": "Libro Inv\u00e1lido",
+        "titulo": "Libro invalido",
         "autor": "Autor Test",
-        "descripcion_completa": "Descripci\u00f3n de prueba",
+        "descripcion_completa": "DescripciÃƒÆ’Ã‚Â³n de prueba",
         "stock": 10,
-        "precio": "no-es-un-numero",
-        "imagen": "test.jpg",
-        "categoria": "Fiction"
-    },
-    "BK0018": {
-        "codigo": "BK0018",
-        "titulo": "Libro Inv\u00e1lido",
-        "autor": "Autor Test",
-        "descripcion_completa": "Descripci\u00f3n de prueba",
-        "stock": "no-es-un-numero",
-        "precio": 29.99,
-        "imagen": "test.jpg",
-        "categoria": "Fiction"
-    },
-    "BK0020": {
-        "codigo": "BK0020",
-        "titulo": "Libro Inv\u00e1lido",
-        "autor": "Autor Test",
-        "descripcion_completa": "Descripci\u00f3n de prueba",
-        "stock": 10,
-        "precio": "no-es-un-numero",
-        "imagen": "test.jpg",
-        "categoria": "Fiction"
-    },
-    "BK0021": {
-        "codigo": "BK0021",
-        "titulo": "Libro Inv\u00e1lido",
-        "autor": "Autor Test",
-        "descripcion_completa": "Descripci\u00f3n de prueba",
-        "stock": "no-es-un-numero",
-        "precio": 29.99,
-        "imagen": "test.jpg",
-        "categoria": "Fiction"
-    },
-    "BK0028": {
-        "codigo": "BK0028",
-        "titulo": "Libro Inv\u00e1lido",
-        "autor": "Autor Test",
-        "descripcion_completa": "Descripci\u00f3n de prueba",
-        "stock": 10,
-        "precio": "no-es-un-numero",
-        "imagen": "test.jpg",
-        "categoria": "Fiction"
-    },
-    "BK0029": {
-        "codigo": "BK0029",
-        "titulo": "Libro Inv\u00e1lido",
-        "autor": "Autor Test",
-        "descripcion_completa": "Descripci\u00f3n de prueba",
-        "stock": "no-es-un-numero",
-        "precio": 29.99,
-        "imagen": "test.jpg",
-        "categoria": "Fiction"
-    },
-    "BK0034": {
-        "codigo": "BK0034",
-        "titulo": "Libro Inv\u00e1lido",
-        "autor": "Autor Test",
-        "descripcion_completa": "Descripci\u00f3n de prueba",
-        "stock": 10,
-        "precio": "no-es-un-numero",
+        "precio": 0.0,
         "imagen": "test.jpg",
         "categoria": "Fiction"
     },
     "BK0035": {
         "codigo": "BK0035",
-        "titulo": "Libro Inv\u00e1lido",
+        "titulo": "Libro invalido",
         "autor": "Autor Test",
-        "descripcion_completa": "Descripci\u00f3n de prueba",
-        "stock": "no-es-un-numero",
+        "descripcion_completa": "Descriprueba",
+        "stock": 3,
         "precio": 29.99,
         "imagen": "test.jpg",
         "categoria": "Fiction"
     },
     "BK0040": {
         "codigo": "BK0040",
-        "titulo": "Libro Inv\u00e1lido",
+        "titulo": "Libro Invalido",
         "autor": "Autor Test",
-        "descripcion_completa": "Descripci\u00f3n de prueba",
+        "descripcion_completa": "DescripciÃƒÆ’Ã‚Â³n de prueba",
         "stock": 10,
-        "precio": "no-es-un-numero",
+        "precio": 0.0,
         "imagen": "test.jpg",
         "categoria": "Fiction"
     },
-    "BK0041": {
-        "codigo": "BK0041",
-        "titulo": "Libro Inv\u00e1lido",
-        "autor": "Autor Test",
-        "descripcion_completa": "Descripci\u00f3n de prueba",
-        "stock": "no-es-un-numero",
-        "precio": 29.99,
-        "imagen": "test.jpg",
-        "categoria": "Fiction"
-    },
-    "BK0046": {
-        "codigo": "BK0046",
-        "titulo": "Libro Inv\u00e1lido",
-        "autor": "Autor Test",
-        "descripcion_completa": "Descripci\u00f3n de prueba",
-        "stock": 10,
-        "precio": "no-es-un-numero",
-        "imagen": "test.jpg",
-        "categoria": "Fiction"
-    },
-    "BK0047": {
-        "codigo": "BK0047",
-        "titulo": "Libro Inv\u00e1lido",
-        "autor": "Autor Test",
-        "descripcion_completa": "Descripci\u00f3n de prueba",
-        "stock": "no-es-un-numero",
-        "precio": 29.99,
+    "BK0077": {
+        "codigo": "BK0077",
+        "titulo": "Libro con Precio String",
+        "autor": "Autor de Prueba",
+        "descripcion_completa": "Descripción del libro con precio string",
+        "stock": "diez",
+        "precio": "precio en texto",
         "imagen": "test.jpg",
         "categoria": "Fiction"
     }
