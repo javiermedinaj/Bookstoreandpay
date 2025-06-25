@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+      - "5001:5001"
+    volumes:
+      - ./templates:/app/templates
+      - ./static:/app/static
+      - ./productos.json:/app/productos.json
+    environment:
+      - FLASK_ENV=development
+      - FLASK_DEBUG=1
+    command: python app.py
+    restart: unless-stopped

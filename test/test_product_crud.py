@@ -4,7 +4,6 @@ import sys
 import logging
 from pathlib import Path
 
-# Agregar el directorio raíz al path de Python para importaciones
 root_dir = Path(__file__).parent.parent
 sys.path.append(str(root_dir))
 
@@ -12,15 +11,13 @@ import pytest
 from app import app
 from books import load_products, DATA_FILE
 
-# Configurar logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 @pytest.fixture
 def client():
     app.config['TESTING'] = True
-    
-    # Backup current data file contents if exist
+
     backup = None
     if os.path.exists(DATA_FILE):
         with open(DATA_FILE, 'r', encoding='utf-8') as f:
@@ -30,7 +27,6 @@ def client():
     with app.test_client() as test_client:
         yield test_client
 
-    # Teardown: restore data file after tests
     logger.info("Restaurando datos originales después de las pruebas")
     if backup is not None:
         with open(DATA_FILE, 'w', encoding='utf-8') as f:
@@ -54,8 +50,7 @@ def added_product(client):
     
     print(f"FIXTURE: Agregando libro '{data['titulo']}' por '{data['autor']}'")
     client.post('/add_product', data=data, content_type='multipart/form-data')
-    
-    # Encontrar el código del producto agregado
+
     products = load_products()
     for code, product in products.items():
         if product['titulo'] == 'Test Book':
@@ -79,7 +74,6 @@ def test_add_product(client):
         'precio': '15.99',
         'categoria': 'General'
     }
-    # Simulate a dummy image file
     dummy_image = (io.BytesIO(b"dummy image data"), "test.jpg")
     data['image'] = dummy_image
 
@@ -90,12 +84,10 @@ def test_add_product(client):
     print(f"Respuesta del servidor: código {response.status_code} (302=Redirected)")
     assert response.status_code == 302, "La adición de producto debería redirigir"
 
-    # Verificar que el producto fue agregado o existe 
     products = load_products()
     print(f"Productos en el sistema después de agregar: {len(products)}")
     assert len(products) > 0, "Debería haber al menos un producto"
     
-    # Verificar que el producto agregado está en la lista
     codigo = None
     for code, product in products.items():
         if product['titulo'] == 'Test Book':
@@ -112,8 +104,7 @@ def test_edit_product_page(client, added_product):
     print("TEST 2: Prueba de visualización del formulario de edición")
     print("------------------------------------------------------")
     print(f"Accediendo al formulario de edición para el libro con código: {added_product}")
-    
-    # Verificar que se muestra el formulario de edición
+ 
     response = client.get(f'/edit_product/{added_product}')
     print(f"Respuesta del servidor: código {response.status_code} (200=OK)")
     assert response.status_code == 200, "Debería mostrar el formulario de edición"
@@ -126,7 +117,6 @@ def test_update_product(client, added_product):
     print("------------------------------------------------------")
     print(f"Actualizando el libro con código: {added_product}")
     
-    # Actualizar producto
     updated_data = {
         'titulo': 'Updated Test Book',
         'autor': 'Updated Author',
@@ -145,7 +135,6 @@ def test_update_product(client, added_product):
     print(f"Respuesta del servidor: código {response.status_code} (302=Redirected)")
     assert response.status_code == 302, "La actualización debería redirigir"
 
-    # Verify update in storage
     products = load_products()
     assert added_product in products, f"El producto con código {added_product} ya no existe"
     updated_product = products.get(added_product)
@@ -165,7 +154,6 @@ def test_book_detail(client, added_product):
     print("------------------------------------------------------")
     print(f"Accediendo a los detalles del libro con código: {added_product}")
     
-    # Verificar página de detalles
     response = client.get(f'/book/{added_product}')
     print(f"Respuesta del servidor: código {response.status_code} (200=OK)")
     assert response.status_code == 200, "Debería mostrar los detalles del libro"
@@ -177,7 +165,6 @@ def test_delete_product(client, added_product):
     print("TEST 5: Prueba de eliminación de un producto")
     print("------------------------------------------------------")
     
-    # Actualizar para tener un título único para verificar eliminación
     updated_data = {
         'titulo': 'Book To Delete',
         'autor': 'Author',
@@ -191,12 +178,10 @@ def test_delete_product(client, added_product):
     client.post(f'/update_product/{added_product}', data=updated_data, content_type='multipart/form-data')
     
     print(f"Solicitando eliminación del libro con código: {added_product}")
-    # Eliminar producto
     response = client.get(f'/delete_product/{added_product}', follow_redirects=False)
     print(f"Respuesta del servidor: código {response.status_code} (302=Redirected)")
     assert response.status_code == 302, "La eliminación debería redirigir"
-    
-    # Verificar eliminación
+
     products = load_products()
     print(f"Verificando que '{updated_data['titulo']}' ya no existe en el catálogo")
     found = False

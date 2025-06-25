@@ -1,12 +1,33 @@
-from flask import Flask, request, render_template, redirect, url_for
+from flask import Flask, request, render_template, redirect, url_for, session
 import os
 from books import agregar_producto, load_products, eliminar_producto, actualizar_producto
 
 app = Flask(__name__)
+app.secret_key = 'clave_secreta_para_testeo'  # clave para testeo
 app.config['UPLOAD_FOLDER'] = 'static/imgs'
 
 os.makedirs('data', exist_ok=True)
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
+
+#rutas de login
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    error = None
+    if request.method == 'POST':
+        if request.form['username'] == 'admin' and request.form['password'] == 'password':
+            session['logged_in'] = True
+            return redirect(url_for('admin'))
+        else:
+            error = 'Contraseña incorrecta'
+    return render_template('login.html', error=error)
+
+
+@app.route('/logout')
+def logout():
+    session.pop('logged_in', None)
+    return redirect(url_for('index'))
+
+#rutas del libro 
 
 @app.route('/')
 def index():
@@ -26,6 +47,8 @@ def filtrar_por_categoria(categoria):
     }
     return render_template('home.html', productos=productos_filtrados.values())
 
+
+#rutas del crud
 @app.route('/admin')
 def admin():
     productos = load_products()

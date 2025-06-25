@@ -73,14 +73,11 @@ content %}
           </select>
         </div>
 
-        <div class="space-y-2">
+        <div class="space-y-2 px-3">
           <label for="stock" class="block text-sm font-medium text-gray-700"
             >Stock</label
           >
-          <p class="text-xs text-gray-500 mb-1">
-            Si aca saco el type se rompe pero con pytest puedo forzarlo            </p>
           <input
-           
             name="stock"
             id="stock"
             min="0"
@@ -94,7 +91,6 @@ content %}
             >Price ($)</label
           >
           <input
-        
             name="precio"
             id="precio"
             step="0.01"
@@ -174,9 +170,8 @@ content %}
                   {{ producto.categoria }}
                 </span>
               </td>
-      
+
               <td class="py-3 px-4 border-b">
-                
                 {% if producto.stock|int > 10 %}
                 <span class="text-emerald-600">{{ producto.stock }}</span>
                 {% elif producto.stock|int > 0 %}
@@ -213,7 +208,6 @@ content %}
             {% endfor %}
           </tbody>
         </table>
-         <p> el error que habia aca era que n se marcaba el tipo de dato </p>
       </div>
     </div>
   </div>

@@ -2,8 +2,7 @@ import os
 import io
 import sys
 from pathlib import Path
-
-# Agregar el directorio raíz al path de Python para importaciones
+    
 root_dir = Path(__file__).parent.parent
 sys.path.append(str(root_dir))
 
@@ -15,7 +14,6 @@ from books import load_products, DATA_FILE
 def client():
     app.config['TESTING'] = True
     
-    # Backup current data file contents if exist
     backup = None
     if os.path.exists(DATA_FILE):
         with open(DATA_FILE, 'r', encoding='utf-8') as f:
@@ -24,7 +22,6 @@ def client():
     with app.test_client() as test_client:
         yield test_client
 
-    # Teardown: restore data file after tests
     if backup is not None:
         with open(DATA_FILE, 'w', encoding='utf-8') as f:
             f.write(backup)
@@ -46,7 +43,6 @@ def added_product(client):
     
     client.post('/add_product', data=data, content_type='multipart/form-data')
     
-    # Encontrar el código del producto agregado
     products = load_products()
     for code, product in products.items():
         if product['titulo'] == 'Test Book':
