@@ -13,4 +13,4 @@ services:
       - FLASK_ENV=development
       - FLASK_DEBUG=1
     command: python app.py
-    restart: unless-stopped%                                                                                
+    restart: unless-stopped
