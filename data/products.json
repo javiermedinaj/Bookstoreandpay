@@ -27,46 +27,56 @@
         "stock": 0,
         "precio": 8.0,
         "imagen": "objectivec.jpg",
+        "categoria": "Estudios"
+    },
+    "BK0081": {
+        "codigo": "BK0081",
+        "titulo": "Analisis de fulbo python",
+        "autor": "O'Reilly",
+        "descripcion_completa": "-",
+        "stock": 2,
+        "precio": 1000.0,
+        "imagen": "footbal_r.jpg",
+        "categoria": "Estudios"
+    },
+    "BK0082": {
+        "codigo": "BK0082",
+        "titulo": "Kubernetes",
+        "autor": "O'Reilly",
+        "descripcion_completa": "-",
+        "stock": "Uno",
+        "precio": "Ochenta",
+        "imagen": "kubernets.jpg",
+        "categoria": "Science"
+    },
+    "BK0083": {
+        "codigo": "BK0083",
+        "titulo": "DataPipeline",
+        "autor": "O'Reilly",
+        "descripcion_completa": "--",
+        "stock": 22,
+        "precio": 1.0,
+        "imagen": "datapipeline.jpg",
+        "categoria": "Estudios"
+    },
+    "BK0084": {
+        "codigo": "BK0084",
+        "titulo": "El Aleph",
+        "autor": "Borges",
+        "descripcion_completa": "lol",
+        "stock": "22",
+        "precio": "CuarentaYCuatro",
+        "imagen": "aleph.webp",
         "categoria": "Fiction"
     },
-    "BK0017": {
-        "codigo": "BK0017",
-        "titulo": "Libro invalido",
-        "autor": "Autor Test",
-        "descripcion_completa": "DescripciÃƒÆ’Ã‚Â³n de prueba",
-        "stock": 10,
-        "precio": 0.0,
-        "imagen": "test.jpg",
-        "categoria": "Fiction"
-    },
-    "BK0035": {
-        "codigo": "BK0035",
-        "titulo": "Libro invalido",
-        "autor": "Autor Test",
-        "descripcion_completa": "Descriprueba",
-        "stock": 3,
-        "precio": 29.99,
-        "imagen": "test.jpg",
-        "categoria": "Fiction"
-    },
-    "BK0040": {
-        "codigo": "BK0040",
-        "titulo": "Libro Invalido",
-        "autor": "Autor Test",
-        "descripcion_completa": "DescripciÃƒÆ’Ã‚Â³n de prueba",
-        "stock": 10,
-        "precio": 0.0,
-        "imagen": "test.jpg",
-        "categoria": "Fiction"
-    },
-    "BK0077": {
-        "codigo": "BK0077",
-        "titulo": "Libro con Precio String",
-        "autor": "Autor de Prueba",
-        "descripcion_completa": "Descripción del libro con precio string",
-        "stock": "diez",
-        "precio": "precio en texto",
-        "imagen": "test.jpg",
-        "categoria": "Fiction"
+    "BK0085": {
+        "codigo": "BK0085",
+        "titulo": "Filosofia del Espiritu",
+        "autor": "Hegel",
+        "descripcion_completa": ".",
+        "stock": "Uno",
+        "precio": "HegelLibroPrecio",
+        "imagen": "hegel.jpg",
+        "categoria": "Science"
     }
 }

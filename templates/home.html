@@ -1,77 +1,151 @@
-{% extends 'layout.html' %}
-
-{% block title %}Home{% endblock %}
-
-{% block content %}
-<div class="mb-8">
-    <div class="flex justify-between items-center mb-3">
-        <div>
-            <h1 class="text-3xl font-bold text-black mb-2">Welcome to biblioteca</h1>
-            <p class="text-gray-600">Discover your next favorite book from our curated collection</p>
-        </div>
-        
-        <div class="relative group">
-            <button class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md transition flex items-center">
-                Categories <i class="fas fa-chevron-down ml-1 text-xs"></i>
-            </button>
-            <div class="absolute right-0 hidden group-hover:block bg-white text-gray-800 shadow-lg rounded-md w-48 py-2 mt-1 z-10">
-                <a href="/categoria/Fiction" class="block px-4 py-2 hover:bg-emerald-50 transition">Fiction</a>
-                <a href="/categoria/Non-Fiction" class="block px-4 py-2 hover:bg-emerald-50 transition">Non-Fiction</a>
-                <a href="/categoria/Mystery" class="block px-4 py-2 hover:bg-emerald-50 transition">Mystery</a>
-                <a href="/categoria/Science" class="block px-4 py-2 hover:bg-emerald-50 transition">Science</a>
-                <a href="/categoria/Biography" class="block px-4 py-2 hover:bg-emerald-50 transition">Biography</a>
-                <a href="/categoria/General" class="block px-4 py-2 hover:bg-emerald-50 transition">General</a>
-                <a href="/categoria/Deportes" class="block px-4 py-2 hover:bg-emerald-50 transition">Sports</a>
-            </div>
-        </div>
+{% extends 'layout.html' %} {% block title %}Home{% endblock %} {% block content
+%}
+<!-- Hero section a todo ancho -->
+<section
+  class="bg-gradient-to-r from-blue-100 to-cyan-100 py-20 w-full mb-8"
+>
+  <div class="text-center w-full">
+    <div class="max-w-4xl mx-auto text-center">
+    <h1 class="text-5xl md:text-6xl font-bold text-blue-900 mb-6">
+      Descubre Tu Próxima
+      <span class="block text-blue-700">Gran Lectura</span>
+    </h1>
+    <p class="text-xl text-blue-800 mb-8 max-w-2xl mx-auto">
+      Explora miles de libros de autores reconocidos, descubre nuevas voces y encuentra tu compañero literario perfecto en nuestra colección seleccionada.
+    </p>
     </div>
+  </div>
+</section>
+
+<!-- Categorías -->
+<div class="container mx-auto px-4 mb-8">
+  <div class="flex justify-end items-center mb-3">
+    <div class="relative group">
+      <div class="pt-4 justify-center align-center">
+        <button
+          class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition flex items-center"
+        >
+          Categorias <i class="fas fa-chevron-down ml-1 text-xs"></i>
+        </button>
+      </div>
+      <div
+        class="absolute right-0 hidden group-hover:block bg-white text-gray-800 shadow-lg rounded-md w-48 py-2 mt-1 z-10"
+      >
+        <a
+          href="/categoria/Estudios"
+          class="block px-4 py-2 hover:bg-emerald-50 transition"
+          >Estudio</a
+        >
+        <a
+          href="/categoria/Fiction"
+          class="block px-4 py-2 hover:bg-emerald-50 transition"
+          >Fiction</a
+        >
+        <a
+          href="/categoria/Mystery"
+          class="block px-4 py-2 hover:bg-emerald-50 transition"
+          >Misterio</a
+        >
+        <a
+          href="/categoria/Science"
+          class="block px-4 py-2 hover:bg-emerald-50 transition"
+          >Ciencia</a
+        >
+        <a
+          href="/categoria/Biografia"
+          class="block px-4 py-2 hover:bg-emerald-50 transition"
+          >Biografia</a
+        >
+        <a
+          href="/categoria/General"
+          class="block px-4 py-2 hover:bg-emerald-50 transition"
+          >General</a
+        >
+        <a
+          href="/"
+          class="block px-4 py-2 hover:bg-emerald-50 transition"
+          >Todos</a
+        >
+      </div>
+    </div>
+  </div>
 </div>
 
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<!-- Grid de productos -->
+<div class="container mx-auto px-4 py-4">
+  <div
+    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+  >
     {% for producto in productos %}
-    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-        <div class="h-56 bg-gray-200 flex items-center justify-center overflow-hidden">
-            {% if producto.imagen %}
-            <img src="{{ url_for('static', filename='imgs/' + producto.imagen) }}" alt="{{ producto.titulo }}" 
-                 class="w-full h-full object-cover transition-transform hover:scale-105">
+    <div
+      class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition"
+    >
+      <div
+        class="h-56 bg-gray-200 flex items-center justify-center overflow-hidden"
+      >
+        {% if producto.imagen %}
+        <img
+          src="{{ url_for('static', filename='imgs/' + producto.imagen) }}"
+          alt="{{ producto.titulo }}"
+          class="w-full h-full object-cover transition-transform hover:scale-105"
+        />
+        {% else %}
+        <div
+          class="flex items-center justify-center h-full w-full bg-gray-100 text-gray-400"
+        >
+          <i class="fas fa-book text-5xl"></i>
+        </div>
+        {% endif %}
+      </div>
+      <div class="p-4">
+        <div class="flex justify-between items-start">
+          <div>
+            <h2 class="text-lg font-semibold text-gray-800">
+              {{ producto.titulo }}
+            </h2>
+            <p class="text-sm text-gray-600">by {{ producto.autor }}</p>
+            <span
+              class="inline-block bg-emerald-100 text-emerald-800 text-xs px-2 py-1 rounded-full mt-1"
+            >
+              {{ producto.categoria }}
+            </span>
+          </div>
+          <span class="text-xl font-bold text-emerald-700"
+            >${{ producto.precio }}</span
+          >
+        </div>
+        <div class="mt-3 flex justify-between items-center">
+          <span class="text-sm text-gray-600">
+            {% if producto.stock|string >= '10'|string %}
+            <span class="text-emerald-600"
+              ><i class="fas fa-check-circle mr-1"></i> In stock</span
+            >
+            {% elif producto.stock > 0 %}
+            <span class="text-amber-600"
+              ><i class="fas fa-exclamation-circle mr-1"></i> Low stock ({{
+              producto.stock }} left)</span
+            >
             {% else %}
-            <div class="flex items-center justify-center h-full w-full bg-gray-100 text-gray-400">
-                <i class="fas fa-book text-5xl"></i>
-            </div>
+            <span class="text-red-600"
+              ><i class="fas fa-times-circle mr-1"></i> Out of stock</span
+            >
             {% endif %}
+          </span>
+          <a
+            href="{{ url_for('book_detail', codigo=producto.codigo) }}"
+            class="text-emerald-600 hover:text-emerald-700 font-medium text-sm"
+          >
+            View details <i class="fas fa-chevron-right ml-1"></i>
+          </a>
         </div>
-        <div class="p-4">
-            <div class="flex justify-between items-start">
-                <div>
-                    <h2 class="text-lg font-semibold text-gray-800">{{ producto.titulo }}</h2>
-                    <p class="text-sm text-gray-600">by {{ producto.autor }}</p>
-                    <span class="inline-block bg-emerald-100 text-emerald-800 text-xs px-2 py-1 rounded-full mt-1">
-                        {{ producto.categoria }}
-                    </span>
-                </div>
-                <span class="text-xl font-bold text-emerald-700">${{ producto.precio }}</span>
-            </div>
-            <div class="mt-3 flex justify-between items-center">
-                <span class="text-sm text-gray-600">
-                   {% if producto.stock|string >= '10'|string %}
-                        <span class="text-emerald-600"><i class="fas fa-check-circle mr-1"></i> In stock</span>
-                    {% elif producto.stock > 0 %}
-                        <span class="text-amber-600"><i class="fas fa-exclamation-circle mr-1"></i> Low stock ({{ producto.stock }} left)</span>
-                    {% else %}
-                        <span class="text-red-600"><i class="fas fa-times-circle mr-1"></i> Out of stock</span>
-                    {% endif %}
-                </span>
-                <a href="{{ url_for('book_detail', codigo=producto.codigo) }}" class="text-emerald-600 hover:text-emerald-700 font-medium text-sm">
-                    View details <i class="fas fa-chevron-right ml-1"></i>
-                </a>
-            </div>
-        </div>
+      </div>
     </div>
     {% else %}
     <div class="col-span-full text-center py-12">
-        <i class="fas fa-book-open text-5xl text-gray-300 mb-3"></i>
-        <p class="text-gray-500 text-lg">No books found in this category.</p>
+      <i class="fas fa-book-open text-5xl text-gray-300 mb-3"></i>
+      <p class="text-gray-500 text-lg">No books found in this category.</p>
     </div>
     {% endfor %}
+  </div>
 </div>
 {% endblock %}

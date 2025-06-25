@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template, redirect, url_for, session
 import os
 from books import agregar_producto, load_products, eliminar_producto, actualizar_producto
+import socket
 
 app = Flask(__name__)
 app.secret_key = 'clave_secreta_para_testeo'  # clave para testeo
@@ -114,5 +115,8 @@ def book_detail(codigo):
         return render_template('book_detail.html', libro=productos[codigo])
     return redirect(url_for('index'))
 
+print(f"⚡ App running: http://localhost:{5001}")
+print(f"🌐 Real container IP: http://{socket.gethostbyname(socket.gethostname())}:{5001}")
+
 if __name__ == '__main__':
-    app.run(debug=True, port=5001)
+    app.run(host="0.0.0.0", debug=True, port=5001)

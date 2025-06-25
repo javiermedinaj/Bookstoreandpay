@@ -39,11 +39,11 @@
                     <label for="categoria" class="block text-sm font-medium text-gray-700">Category</label>
                     <select name="categoria" id="categoria" 
                             class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                        <option value="Estudios" {% if producto.categoria == 'General' %}selected{% endif %}>Estudios</option>
                         <option value="Fiction" {% if producto.categoria == 'Fiction' %}selected{% endif %}>Fiction</option>
-                        <option value="Non-Fiction" {% if producto.categoria == 'Non-Fiction' %}selected{% endif %}>Non-Fiction</option>
-                        <option value="Mystery" {% if producto.categoria == 'Mystery' %}selected{% endif %}>Mystery</option>
-                        <option value="Science" {% if producto.categoria == 'Science' %}selected{% endif %}>Science</option>
-                        <option value="Biography" {% if producto.categoria == 'Biography' %}selected{% endif %}>Biography</option>
+                        <option value="Mystery" {% if producto.categoria == 'Mystery' %}selected{% endif %}>Misterio</option>
+                        <option value="Science" {% if producto.categoria == 'Science' %}selected{% endif %}>Ciencia</option>
+                        <option value="Biography" {% if producto.categoria == 'Biography' %}selected{% endif %}>Biografia</option>
                         <option value="General" {% if producto.categoria == 'General' %}selected{% endif %}>General</option>
                     </select>
                 </div>
